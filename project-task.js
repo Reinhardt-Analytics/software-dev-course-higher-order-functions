@@ -82,7 +82,7 @@ function applyDiscount(discountPercent) {
   return function(product) {
     const discount = product.price * (discountPercent / 100);
     return {
-      ...product, // keep the rest of the product properties
+      ...product, 
       discountedPrice: product.price - discount
     };
   };
@@ -103,7 +103,7 @@ const totalValue = products.reduce((stockTrue, product) => {
   if (product.inStock) {
     return stockTrue + product.price;
   }
-  return stockTrue; // keep the same total if not in stock
+  return stockTrue; 
 }, 0);
 
 console.log('Total value: ' + totalValue);
